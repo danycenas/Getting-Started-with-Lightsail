@@ -74,7 +74,12 @@ también es necesario hacer ejecutables los scripts del directorio bin:
 sudo chmod +x /opt/tomcat/latest/bin/*.sh
 ```
 
-Crear un archivo systemd
+Crear un archivo systemd con el siguiente contenido:
+
+```bash
+sudo vim /etc/systemd/system/tomcat.service
+```
+
 ```bash
 [Unit]
 Description=Tomcat 8.5 servlet container
