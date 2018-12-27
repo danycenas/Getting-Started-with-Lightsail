@@ -1,3 +1,3 @@
 # Getting Started with Lightsail
 
-![picture](img/create-instance.png)
+![picture](https://github.com/danycenas/Getting-Started-with-Lightsail/blob/master/img/create-intance.png)
