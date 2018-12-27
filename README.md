@@ -31,16 +31,16 @@ admin@ip-172-26-15-175:~$ javac -version
 javac 1.8.0_181
 ```
 
-**Instalar tomcat 8.5.37**
+**Instalar apache-tomcat-8.5.X**
 
 Crear usuario tomcat
-La ejecución de Tomcat como usuario root es un riesgo de seguridad y no se recomienda.
+La ejecución de Tomcat como usuario root es un riesgo de seguridad y no se recomienda.  
 Para crear un nuevo usuario y grupo del sistema para nuestra instancia de Tomcat con el directorio de inicio de /opt/tomcat, ejecutar el siguiente comando:
 ```bash
 sudo useradd -m -U -d /opt/tomcat -s /bin/false tomcat
 ```
 
-Descargar  [tomcat-8.5.37](https://archive.apache.org/dist/tomcat/tomcat-8/v8.5.37/bin/).
+Descargar [tomcat-8.5.X](https://archive.apache.org/dist/tomcat/tomcat-8/).
 ```bash
 cd /tmp
 wget http://www-us.apache.org/dist/tomcat/tomcat-8/v8.5.37/bin/apache-tomcat-8.5.37.zip
@@ -51,4 +51,20 @@ Cuando se complete la descarga, ejecute los siguientes comandos para extraer el 
 unzip apache-tomcat-*.zip
 sudo mkdir -p /opt/tomcat
 sudo mv apache-tomcat-8.5.37 /opt/tomcat/
+```
+
+Para tener más control sobre las versiones y actualizaciones de Tomcat, crear un enlace llamado latest que apunte al directorio de instalación de Tomcat:
+```bash
+sudo ln -s /opt/tomcat/apache-tomcat-8.5.37 /opt/tomcat/latest
+```
+
+Más adelante, cuando vaya a actualizar la versión de Tomcat, puede simplemente descomprimir la versión más reciente y cambiar el enlace para que apunte a la última versión.  
+Cambie la propiedad del directorio /opt/tomcat a user y group tomcat para que el usuario pueda tener acceso a la instalación de tomcat:
+```bash
+sudo chown -R tomcat: /opt/tomcat
+```
+
+también hacer los scripts ejecutables dentro del directorio bin:
+```bash
+sudo chmod +x /opt/tomcat/latest/bin/*.sh
 ```
