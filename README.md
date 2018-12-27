@@ -16,16 +16,18 @@ Actualizamos la lista de paquetes disponibles a las últimas versiones. (Ojo est
 ```bash
 sudo apt-get update
 ```
-Verificamos si tenemos instalado el JDK.
-```bash
-java -version
-javac -version
-```
-
-De no tener instalado, procedemos a instalar con el siguiente comando
+Instalar JDK 8.
 ```bash
 sudo apt-get install -y openjdk-8-jdk
 ```
+Para otras versiones de openjdk revisar la [documentación](https://openjdk.java.net/install/).
 
-Volvemos a validar la versión de JDK instalada
-![picture](https://danycenas.github.io/Getting-Started-with-Lightsail/img/java-version.png)
+Verificar la versión de JDK instalada.
+```bash
+admin@ip-172-26-15-175:~$ java -version
+openjdk version "1.8.0_181"
+OpenJDK Runtime Environment (build 1.8.0_181-8u181-b13-2~deb9u1-b13)
+OpenJDK 64-Bit Server VM (build 25.181-b13, mixed mode)
+admin@ip-172-26-15-175:~$ javac -version
+javac 1.8.0_181
+```
