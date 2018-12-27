@@ -1,3 +1,3 @@
-# Getting-Started-with-Lightsail
+# Getting Started with Lightsail
 
 ![picture](img/create-instance.png)
