@@ -16,6 +16,11 @@ Para empezar con la instalación es necesario actualizar la lista de paquetes di
 sudo apt-get update
 ```
 
+**Instalar unzip**, necesario para poder descomprimir.
+```bash
+sudo apt-get install -y unzip
+```
+
 **Instalar openjdk 8**, para otras versiones revisar la [documentación](https://openjdk.java.net/install/).
 ```bash
 sudo apt-get install -y openjdk-8-jdk
