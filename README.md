@@ -28,7 +28,4 @@ sudo apt-get install -y openjdk-8-jdk
 ```
 
 Volvemos a validar la versión de JDK instalada
-```bash
-java -version
-javac -version
-```
+![picture](https://danycenas.github.io/Getting-Started-with-Lightsail/img/java-version.png)
