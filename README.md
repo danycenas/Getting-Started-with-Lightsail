@@ -7,11 +7,11 @@ La siguiente guia nos permitirá implementar un servidor Linux con tomcat 8.5.37
 
 # Empezemos
 
-Seleccionar una plataforma Linux/Unix con una distribución Debian 9.5.
+Seleccionar la plataforma Linux/Unix, asimismo elegir la distribución Debian 9.5.
 
 ![picture](https://danycenas.github.io/getting-started-with-lightsail/img/create-intance.png)
 
-Actualizar la lista de paquetes disponibles a las últimas versiones. (Ojo este comando no instala nada)
+Para empezar con la instalación es necesario actualizar la lista de paquetes disponibles a la última versión. (Ojo este comando no instala nada)
 ```bash
 sudo apt-get update
 ```
@@ -23,17 +23,17 @@ sudo apt-get install -y openjdk-8-jdk
 
 Verificar la versión de openjdk instalada.
 ```bash
-admin@ip-172-26-15-175:~$ java -version
+admin@ip-172-26-16-177:~$ java -version
 openjdk version "1.8.0_181"
 OpenJDK Runtime Environment (build 1.8.0_181-8u181-b13-2~deb9u1-b13)
 OpenJDK 64-Bit Server VM (build 25.181-b13, mixed mode)
-admin@ip-172-26-15-175:~$ javac -version
+admin@ip-172-26-16-177:~$ javac -version
 javac 1.8.0_181
 ```
 
-**Instalar apache-tomcat-8.5.X**
+**Instalar apache-tomcat-8.5.x**
 
-Crear usuario tomcat
+Crear un usuario tomcat
 La ejecución de Tomcat como usuario root es un riesgo de seguridad y no se recomienda.  
 Para crear un nuevo usuario y grupo del sistema para nuestra instancia de Tomcat con el directorio de inicio de /opt/tomcat, ejecutar el siguiente comando:
 ```bash
@@ -64,7 +64,45 @@ Cambie la propiedad del directorio /opt/tomcat a user y group tomcat para que el
 sudo chown -R tomcat: /opt/tomcat
 ```
 
-también hacer los scripts ejecutables dentro del directorio bin:
+también es necesario hacer ejecutables los scripts del directorio bin:
 ```bash
 sudo chmod +x /opt/tomcat/latest/bin/*.sh
+```
+
+Crear un archivo systemd
+```bash
+[Unit]
+Description=Tomcat 8.5 servlet container
+After=network.target
+
+[Service]
+Type=forking
+
+User=tomcat
+Group=tomcat
+
+Environment="JAVA_HOME=/usr/lib/jvm/java-1.8.0-openjdk-amd64"
+Environment="JAVA_OPTS=-Djava.security.egd=file:///dev/urandom"
+
+Environment="CATALINA_BASE=/opt/tomcat/latest"
+Environment="CATALINA_HOME=/opt/tomcat/latest"
+Environment="CATALINA_PID=/opt/tomcat/latest/temp/tomcat.pid"
+Environment="CATALINA_OPTS=-Xms512M -Xmx1024M -server -XX:+UseParallelGC"
+
+ExecStart=/opt/tomcat/latest/bin/startup.sh
+ExecStop=/opt/tomcat/latest/bin/shutdown.sh
+
+[Install]
+WantedBy=multi-user.target
+```
+
+Notifique al systemd de un nuevo archivo de unidad e inicie el servicio Tomcat ejecutando:
+```bash
+sudo systemctl daemon-reload
+sudo systemctl start tomcat
+```
+
+Verificar el estado del servicio de Tomcat:
+```bash
+sudo systemctl status tomcat
 ```
