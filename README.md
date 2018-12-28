@@ -16,6 +16,11 @@ Para empezar con la instalación es necesario actualizar la lista de paquetes di
 sudo apt-get update
 ```
 
+**Configurar Zona Horaria**
+```bash
+sudo timedatectl set-timezone America/Lima
+```
+
 **Instalar unzip**, necesario para poder descomprimir.
 ```bash
 sudo apt-get install -y unzip
