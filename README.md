@@ -125,5 +125,6 @@ Configurar un usuario y habiliar el gestor de aplicaciones, luego reiniciamos:
 ```bash
 vi /opt/tomcat/latest/conf/tomcat-users.xml
 vi /opt/tomcat/latest/webapps/manager/META-INF/context.xml
+vi /opt/tomcat/latest/webapps/manager/WEB-INF/web.xml
 sudo systemctl restart tomcat
 ```
