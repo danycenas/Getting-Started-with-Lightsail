@@ -53,19 +53,19 @@ sudo useradd -m -U -d /opt/tomcat -s /bin/false tomcat
 Descargar [tomcat-8.5.X](https://archive.apache.org/dist/tomcat/tomcat-8/).
 ```bash
 cd /tmp
-wget http://www-us.apache.org/dist/tomcat/tomcat-8/v8.5.37/bin/apache-tomcat-8.5.37.zip
+wget http://www-us.apache.org/dist/tomcat/tomcat-8/v8.5.38/bin/apache-tomcat-8.5.38.zip
 ```
 
 Cuando se complete la descarga, ejecute los siguientes comandos para extraer el archivo zip y mover el contenido al directorio /opt/tomcat:
 ```bash
 unzip apache-tomcat-*.zip
 sudo mkdir -p /opt/tomcat
-sudo mv apache-tomcat-8.5.37 /opt/tomcat/
+sudo mv apache-tomcat-8.5.38 /opt/tomcat/
 ```
 
 Para tener más control sobre las versiones y actualizaciones de Tomcat, crear un enlace llamado latest que apunte al directorio de instalación de Tomcat:
 ```bash
-sudo ln -s /opt/tomcat/apache-tomcat-8.5.37 /opt/tomcat/latest
+sudo ln -s /opt/tomcat/apache-tomcat-8.5.38 /opt/tomcat/latest
 ```
 
 Más adelante, cuando vaya a actualizar la versión de Tomcat, puede simplemente descomprimir la versión más reciente y cambiar el enlace para que apunte a la última versión.  
@@ -76,13 +76,12 @@ sudo chown -R tomcat: /opt/tomcat
 
 también es necesario hacer ejecutables los scripts del directorio bin:
 ```bash
-sudo chmod +x /opt/tomcat/latest/bin/*.sh
+sudo sh -c 'chmod +x /opt/tomcat/latest/bin/*.sh'
 ```
 
 Crear un archivo systemd con el siguiente contenido:
-
 ```bash
-sudo vim /etc/systemd/system/tomcat.service
+sudo vi /etc/systemd/system/tomcat.service
 ```
 
 ```bash
@@ -96,7 +95,7 @@ Type=forking
 User=tomcat
 Group=tomcat
 
-Environment="JAVA_HOME=/usr/lib/jvm/java-1.8.0-openjdk-amd64"
+Environment="JAVA_HOME=/usr/lib/jvm/default-java"
 Environment="JAVA_OPTS=-Djava.security.egd=file:///dev/urandom"
 
 Environment="CATALINA_BASE=/opt/tomcat/latest"
@@ -120,4 +119,11 @@ sudo systemctl start tomcat
 Verificar el estado del servicio de Tomcat:
 ```bash
 sudo systemctl status tomcat
+```
+
+Configurar un usuario y luego habiliar el gestor de aplicaciones, luego reiniciar:
+```bash
+vi /opt/tomcat/latest/conf/tomcat-users.xml
+vi /opt/tomcat/latest/webapps/manager/META-INF/context.xml
+sudo systemctl restart tomcat
 ```
