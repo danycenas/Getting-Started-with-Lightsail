@@ -121,7 +121,7 @@ Verificar el estado del servicio de Tomcat:
 sudo systemctl status tomcat
 ```
 
-Configurar un usuario y luego habiliar el gestor de aplicaciones, luego reiniciar:
+Configurar un usuario y habiliar el gestor de aplicaciones, luego reiniciamos:
 ```bash
 vi /opt/tomcat/latest/conf/tomcat-users.xml
 vi /opt/tomcat/latest/webapps/manager/META-INF/context.xml
