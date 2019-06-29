@@ -10,13 +10,17 @@ La siguiente guia nos permitirá implementar un servidor Linux con tomcat 8.5.37
 Iniciar sesión en:
 https://aws.amazon.com/es/console/
 
-![picture](https://github.com/danycenas/getting-started-with-lightsail/blob/master/img/login.png)
+![picture](https://danycenas.github.io/getting-started-with-lightsail/img/login.png)
 
 ![picture](https://danycenas.github.io/getting-started-with-lightsail/img/lightsail.png)
 
 Seleccionar la plataforma Linux/Unix, asimismo elegir la distribución Debian 9.5.
 
-![picture](https://danycenas.github.io/getting-started-with-lightsail/img/create-intance.png)
+![picture](https://danycenas.github.io/getting-started-with-lightsail/img/lightsail2.png)
+
+![picture](https://danycenas.github.io/getting-started-with-lightsail/img/lightsail3.png)
+
+![picture](https://danycenas.github.io/getting-started-with-lightsail/img/lightsail4.png)
 
 Para empezar con la instalación es necesario actualizar la lista de paquetes disponibles a la última versión. (Ojo este comando no instala nada)
 ```bash
