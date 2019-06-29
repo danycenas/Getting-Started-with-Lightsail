@@ -10,7 +10,7 @@ La siguiente guia nos permitirá implementar un servidor Linux con tomcat 8.5.37
 Iniciar sesión en:
 https://aws.amazon.com/es/console/
 
-![picture](https://danycenas.github.io/getting-started-with-lightsail/img/login.png)
+![picture](https://github.com/danycenas/getting-started-with-lightsail/blob/master/img/login.png)
 
 ![picture](https://danycenas.github.io/getting-started-with-lightsail/img/lightsail.png)
 
