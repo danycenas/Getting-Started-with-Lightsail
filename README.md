@@ -22,7 +22,13 @@ Seleccionar la plataforma Linux/Unix, asimismo elegir la distribución Debian 9.
 
 ![picture](https://danycenas.github.io/getting-started-with-lightsail/img/lightsail4.png)
 
-Para empezar con la instalación es necesario actualizar la lista de paquetes disponibles a la última versión. (Ojo este comando no instala nada)
+![picture](https://danycenas.github.io/getting-started-with-lightsail/img/lightsail5.png)
+
+Para empezar a escribir comandos debemos de abrir la terminal.
+
+![picture](https://danycenas.github.io/getting-started-with-lightsail/img/lightsail6.png)
+
+Primero es necesario actualizar la lista de paquetes disponibles a la última versión. (Ojo este comando no instala nada)
 ```bash
 sudo apt-get update
 ```
@@ -64,7 +70,7 @@ sudo useradd -m -U -d /opt/tomcat -s /bin/false tomcat
 Descargar [tomcat-8.5.X](https://archive.apache.org/dist/tomcat/tomcat-8/).
 ```bash
 cd /tmp
-wget http://www-us.apache.org/dist/tomcat/tomcat-8/v8.5.38/bin/apache-tomcat-8.5.38.zip
+wget https://archive.apache.org/dist/tomcat/tomcat-8/v8.5.38/bin/apache-tomcat-8.5.38.zip
 ```
 
 Cuando se complete la descarga, ejecute los siguientes comandos para extraer el archivo zip y mover el contenido al directorio /opt/tomcat:
