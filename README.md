@@ -22,6 +22,12 @@ Seleccionar la plataforma Linux/Unix, asimismo elegir la distribución Debian 9.
 
 ![picture](https://danycenas.github.io/getting-started-with-lightsail/img/lightsail4.png)
 
+Antes de empezar es necesario habilitar el puerto del tomcat
+
+![picture](https://danycenas.github.io/getting-started-with-lightsail/img/lightsail7.png)
+
+![picture](https://danycenas.github.io/getting-started-with-lightsail/img/lightsail8.png)
+
 Para empezar a escribir comandos debemos de abrir la terminal.
 
 ![picture](https://danycenas.github.io/getting-started-with-lightsail/img/lightsail5.png)
