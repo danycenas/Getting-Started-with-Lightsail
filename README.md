@@ -22,9 +22,9 @@ Seleccionar la plataforma Linux/Unix, asimismo elegir la distribución Debian 9.
 
 ![picture](https://danycenas.github.io/getting-started-with-lightsail/img/lightsail4.png)
 
-![picture](https://danycenas.github.io/getting-started-with-lightsail/img/lightsail5.png)
-
 Para empezar a escribir comandos debemos de abrir la terminal.
+
+![picture](https://danycenas.github.io/getting-started-with-lightsail/img/lightsail5.png)
 
 ![picture](https://danycenas.github.io/getting-started-with-lightsail/img/lightsail6.png)
 
