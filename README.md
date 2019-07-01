@@ -1,4 +1,4 @@
-La siguiente guia nos permitirá implementar un servidor Linux con tomcat 8.5.37 y mysql para el despliegue de las aplicaciones.
+La siguiente guia nos permitirá implementar un servidor Linux con tomcat 8.5.38 y mysql para el despliegue de las aplicaciones.
 
 # Requisitos
 
@@ -64,7 +64,7 @@ admin@ip-172-26-16-177:~$ javac -version
 javac 1.8.0_181
 ```
 
-**Instalar apache-tomcat-8.5.x**
+# Instalar apache-tomcat-8.5.38
 
 Crear un usuario tomcat
 La ejecución de Tomcat como usuario root es un riesgo de seguridad y no se recomienda.  
@@ -152,6 +152,8 @@ vi /opt/tomcat/latest/webapps/manager/WEB-INF/web.xml
 sudo systemctl restart tomcat
 ```
 
+# Instalar MySQL 5.6
+
 **Agregar el repositorio de MySQL APT**
 ```bash
 sudo apt-get install lsb-release
@@ -162,7 +164,7 @@ sudo apt update
 
 ![picture](https://danycenas.github.io/getting-started-with-lightsail/img/mysql1.png)
 
-**Instalar MySQL 5.6**
+**Instalar MySQL 5.6, omitir la contraseña del root por el momento.**
 ```bash
 sudo apt install mysql-server
 ```
