@@ -151,3 +151,30 @@ vi /opt/tomcat/latest/webapps/manager/META-INF/context.xml
 vi /opt/tomcat/latest/webapps/manager/WEB-INF/web.xml
 sudo systemctl restart tomcat
 ```
+
+**Agregar el repositorio de MySQL APT**
+```bash
+sudo apt-get install lsb-release
+sudo wget https://dev.mysql.com/get/mysql-apt-config_0.8.13-1_all.deb
+sudo dpkg -i mysql-apt-config_0.8.13-1_all.deb
+sudo apt update
+```
+
+![picture](https://danycenas.github.io/getting-started-with-lightsail/img/mysql1.png)
+
+**Instalar MySQL 5.6**
+```bash
+sudo apt install mysql-server
+```
+
+![picture](https://danycenas.github.io/getting-started-with-lightsail/img/mysql2.png)
+
+**Verificar la versión instalada**
+```bash
+mysql --version
+```
+
+**Configurar seguridad MySQL**
+```bash
+mysql --version
+```
