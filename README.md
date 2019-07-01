@@ -7,8 +7,7 @@ La siguiente guia nos permitirá implementar un servidor Linux con tomcat 8.5.38
 
 # Empezemos
 
-Iniciar sesión en:
-https://aws.amazon.com/es/console/
+Iniciar sesión en: [https://aws.amazon.com/es/console/]
 
 ![picture](https://danycenas.github.io/getting-started-with-lightsail/img/login.png)
 
@@ -66,14 +65,14 @@ javac 1.8.0_181
 
 # Instalar apache-tomcat-8.5.38
 
-Crear un usuario tomcat
+**Crear un usuario tomcat**
 La ejecución de Tomcat como usuario root es un riesgo de seguridad y no se recomienda.  
 Para crear un nuevo usuario y grupo del sistema para nuestra instancia de Tomcat con el directorio de inicio de /opt/tomcat, ejecutar el siguiente comando:
 ```bash
 sudo useradd -m -U -d /opt/tomcat -s /bin/false tomcat
 ```
 
-Descargar [tomcat-8.5.X](https://archive.apache.org/dist/tomcat/tomcat-8/).
+**Descargar [tomcat-8.5](https://archive.apache.org/dist/tomcat/tomcat-8/)**
 ```bash
 cd /tmp
 wget https://archive.apache.org/dist/tomcat/tomcat-8/v8.5.38/bin/apache-tomcat-8.5.38.zip
@@ -139,12 +138,12 @@ sudo systemctl daemon-reload
 sudo systemctl start tomcat
 ```
 
-Verificar el estado del servicio de Tomcat:
+**Verificar status del servicio Tomcat**
 ```bash
 sudo systemctl status tomcat
 ```
 
-Configurar un usuario y habiliar el gestor de aplicaciones, luego reiniciamos:
+**Configurar un usuario y habiliar el gestor de aplicaciones**
 ```bash
 vi /opt/tomcat/latest/conf/tomcat-users.xml
 vi /opt/tomcat/latest/webapps/manager/META-INF/context.xml
@@ -154,7 +153,7 @@ sudo systemctl restart tomcat
 
 # Instalar MySQL 5.6
 
-**Agregar el repositorio de MySQL APT**
+Agregar el repositorio de MySQL APT
 ```bash
 sudo apt-get install lsb-release
 sudo wget https://dev.mysql.com/get/mysql-apt-config_0.8.13-1_all.deb
@@ -176,7 +175,25 @@ sudo apt install mysql-server
 mysql --version
 ```
 
-**Configurar seguridad MySQL**
+**Configurar la seguridad de MySQL**
 ```bash
-mysql --version
+sudo mysql_secure_installation
+```
+
+**Habilitar permisos de root**
+```sql
+sudo mysql -u root -p
+show databases;
+use mysql;
+SELECT user, host FROM mysql.user;
+
+CREATE USER 'root'@'%' IDENTIFIED BY 'PASSWORD';
+FLUSH PRIVILEGES;
+exit;
+```
+
+**Reiniciar y verificar status del servicio MySQL**
+```bash
+sudo systemctl restart mysql
+sudo systemctl status mysql
 ```
