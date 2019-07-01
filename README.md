@@ -158,13 +158,13 @@ Agregar el repositorio de MySQL APT
 sudo apt-get install lsb-release
 sudo wget https://dev.mysql.com/get/mysql-apt-config_0.8.13-1_all.deb
 sudo dpkg -i mysql-apt-config_0.8.13-1_all.deb
-sudo apt update
 ```
 
 ![picture](https://danycenas.github.io/getting-started-with-lightsail/img/mysql1.png)
 
 **Instalar MySQL 5.6, omitir la contraseña del root por el momento.**
 ```bash
+sudo apt update
 sudo apt install mysql-server
 ```
 
