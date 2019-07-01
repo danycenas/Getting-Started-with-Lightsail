@@ -1,4 +1,4 @@
-La siguiente guia nos permitirá implementar un servidor Linux con tomcat 8.5.38 y mysql para el despliegue de las aplicaciones.
+Guía para implementar un servidor Linux(Debian) con tomcat 8.5.38 y mysql 5.6.
 
 # Requisitos
 
