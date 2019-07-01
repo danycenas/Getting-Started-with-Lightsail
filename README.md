@@ -1,4 +1,4 @@
-Guía para implementar un servidor Linux(Debian) con tomcat 8.5.38 y mysql 5.6.
+Guía para implementar un servidor Linux(Debian) con Apache Tomcat 8.5.38 y MySQL 5.6.
 
 # Requisitos
 
@@ -7,7 +7,7 @@ Guía para implementar un servidor Linux(Debian) con tomcat 8.5.38 y mysql 5.6.
 
 # Empezemos
 
-Iniciar sesión en: [https://aws.amazon.com/es/console/]
+Iniciar sesión en: https://aws.amazon.com/es/console/
 
 ![picture](https://danycenas.github.io/getting-started-with-lightsail/img/login.png)
 
