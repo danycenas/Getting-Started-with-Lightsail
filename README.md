@@ -63,6 +63,11 @@ admin@ip-172-26-16-177:~$ javac -version
 javac 1.8.0_181
 ```
 
+Verificar la ruta donde está instalado Java
+```bash
+sudo update-java-alternatives -l
+```
+
 # Instalar apache-tomcat-8.5.38
 
 **Crear un usuario tomcat**
