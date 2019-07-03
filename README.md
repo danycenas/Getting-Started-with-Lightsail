@@ -143,6 +143,11 @@ sudo systemctl start tomcat
 sudo systemctl status tomcat
 ```
 
+Si desea habilitar el servicio tomcat, para que se inicie en el arranque del servidor, ejecute este comando:
+```bash
+sudo systemctl enable tomcat
+```
+
 **Configurar un usuario y habiliar el gestor de aplicaciones**
 ```bash
 vi /opt/tomcat/latest/conf/tomcat-users.xml
